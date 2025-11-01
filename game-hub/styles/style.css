@@ -1,0 +1,108 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #D6E4FF; /* fundo claro */
+    color: #030C12; /* texto escuro */
+}
+
+header {
+    background: #533172; /* roxo escuro */
+    color: #D6E4FF;
+    padding: 12px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #D6E4FF;
+}
+
+nav {
+    margin: 10px 0;
+}
+
+nav a {
+    color: #D6E4FF;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+
+nav a:hover {
+    background: #70877F; /* hover em verde acinzentado */
+    color: #D6E4FF;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+footer {
+    background: #030C12; /* quase preto */
+    color: #D6E4FF;
+    text-align: center;
+    padding: 12px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+h2 {
+    color: #533172; /* títulos em roxo */
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 12px;
+}
+
+.game-card {
+    background: #ffffff;
+    border: 1px solid #A6808C; /* mauve para borda */
+    border-radius: 8px;
+    margin: 15px 0;
+    padding: 15px;
+    box-shadow: 0 6px 18px rgba(83,49,114,0.06);
+}
+
+.game-card img {
+    max-width: 100%;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.rating {
+    color: #70877F; /* cor das estrelas */
+    font-weight: bold;
+}
+
+/* botões de destaque */
+button, .btn {
+    background: #533172;
+    color: #D6E4FF;
+    border: 1px solid #A6808C;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button.secondary {
+    background: transparent;
+    color: #533172;
+    border: 1px solid #70877F;
+}
