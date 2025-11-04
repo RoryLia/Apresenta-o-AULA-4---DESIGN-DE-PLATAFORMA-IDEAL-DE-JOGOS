@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Old's Arcade</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/layout.css">
+  <meta charset="UTF-8">
+  <title>New Old's Arcade</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="layout.css">
 </head>
 <body>
-    <div id="header"></div>
-
-    <main>
-        <h1>Bem-vindo ao New Old's Arcade</h1>
-        <p>Seu destino único para todas as suas necessidades de jogos!</p>
-        <a href="listing.html">Navegar Jogos</a>
-    </main>
-
-    <div id="footer"></div>
-
-    <script src="scripts/main.js"></script>
+  <div id="header"></div>
+  <main>
+    <h1>Bem-vindo ao New Old's Arcade!</h1>
+    <p>Explore, jogue e avalie nossos jogos.</p>
+    <a href="listing.html" class="botao">Ver jogos</a>
+    <a href="rating.html" class="botao">Avaliar jogos</a>
+  </main>
+  <div id="footer"></div>
+  <script>
+    fetch('header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+    fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+  <script src="main.js"></script>
 </body>
 </html>
