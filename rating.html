@@ -1,48 +1,28 @@
-<div class="rating">
-    <h3>Game Rating</h3>
-    <div class="stars">
-        <span class="star" data-value="1">&#9733;</span>
-        <span class="star" data-value="2">&#9733;</span>
-        <span class="star" data-value="3">&#9733;</span>
-        <span class="star" data-value="4">&#9733;</span>
-        <span class="star" data-value="5">&#9733;</span>
-    </div>
-    <p class="rating-value">Rating: <span id="rating-display">0</span></p>
-</div>
-
-<script>
-    const stars = document.querySelectorAll('.star');
-    const ratingDisplay = document.getElementById('rating-display');
-
-    stars.forEach(star => {
-        star.addEventListener('click', () => {
-            const rating = star.getAttribute('data-value');
-            ratingDisplay.textContent = rating;
-            stars.forEach(s => {
-                s.classList.remove('selected');
-            });
-            for (let i = 0; i < rating; i++) {
-                stars[i].classList.add('selected');
-            }
-        });
-    });
-</script>
-
-<style>
-    .rating {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .stars {
-        display: flex;
-    }
-    .star {
-        font-size: 24px;
-        cursor: pointer;
-        color: gold;
-    }
-    .star.selected {
-        color: orange;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Avaliação de Jogos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header"></div>
+  <main>
+    <h2>Avalie nossos jogos!</h2>
+    <form id="ratingForm">
+      <label for="jogo">Jogo:</label>
+      <select id="jogo"></select>
+      <label for="nota">Nota (1 a 5):</label>
+      <input type="number" id="nota" name="nota" min="1" max="5" required>
+      <button type="submit">Enviar Avaliação</button>
+    </form>
+    <div id="ratings-list"></div>
+  </main>
+  <div id="footer"></div>
+  <script>
+    fetch('header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+    fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+  <!-- Adicione JS de avaliação conforme desejar -->
+</body>
+</html>
