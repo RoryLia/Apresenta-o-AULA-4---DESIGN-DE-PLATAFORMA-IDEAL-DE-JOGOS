@@ -1,41 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('search-input');
-    const searchResults = document.getElementById('search-results');
-
-    searchInput.addEventListener('input', () => {
-        const query = searchInput.value.toLowerCase();
-        searchGames(query);
+document.getElementById('searchBox').addEventListener('input', function (event) {
+  const query = event.target.value.toLowerCase();
+  fetch('games.json')
+    .then(response => response.json())
+    .then(games => {
+      const list = document.getElementById('games-list');
+      list.innerHTML = '';
+      games.filter(game => game.titulo.toLowerCase().includes(query)).forEach(game => {
+        const item = document.createElement('div');
+        item.classList.add('game-item');
+        item.innerHTML = `
+          <h3>${game.titulo}</h3>
+          <p>${game.descricao}</p>
+          <a href="game.html?id=${game.id}">Detalhes</a>
+        `;
+        list.appendChild(item);
+      });
     });
-
-    function searchGames(query) {
-        fetch('../data/games.json')
-            .then(response => response.json())
-            .then(games => {
-                const filteredGames = games.filter(game => 
-                    game.title.toLowerCase().includes(query) || 
-                    game.description.toLowerCase().includes(query)
-                );
-                displayResults(filteredGames);
-            })
-            .catch(error => console.error('Erro ao buscar jogos:', error));
-    }
-
-    function displayResults(games) {
-        searchResults.innerHTML = '';
-        if (games.length === 0) {
-            searchResults.innerHTML = '<p>Nenhum resultado encontrado.</p>';
-            return;
-        }
-        games.forEach(game => {
-            const gameItem = document.createElement('div');
-            gameItem.classList.add('item-jogo');
-            gameItem.innerHTML = `
-                <h3>${game.title}</h3>
-                <p>${game.description}</p>
-                <p>Avaliação: ${game.rating}</p>
-                <img src="${game.imageUrl}" alt="${game.title}">
-            `;
-            searchResults.appendChild(gameItem);
-        });
-    }
 });
