@@ -1,27 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Old's Arcade - Listagem</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/layout.css">
+  <meta charset="UTF-8">
+  <title>Lista de Jogos</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header Component -->
-    <div id="header"></div>
-
-    <main>
-        <h1>Jogos Disponíveis</h1>
-        <div id="game-list" class="game-list">
-            <!-- Game items will be dynamically inserted here -->
-        </div>
-    </main>
-
-    <!-- Footer Component -->
-    <div id="footer"></div>
-
-    <script src="scripts/main.js"></script>
-    <script src="scripts/listing.js"></script>
+  <div id="header"></div>
+  <main>
+    <h2>Jogos Disponíveis</h2>
+    <input type="text" id="searchBox" placeholder="Buscar jogo..." />
+    <div id="games-list"></div>
+  </main>
+  <div id="footer"></div>
+  <script>
+    fetch('header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+    fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+  <script src="listing.js"></script>
+  <script src="search.js"></script>
 </body>
 </html>
