@@ -1,32 +1,14 @@
 [
-    {
-        "title": "The Legend of Zelda: Breath of the Wild",
-        "description": "An open-world action-adventure game set in the kingdom of Hyrule.",
-        "rating": 9.7,
-        "image": "https://example.com/images/zelda.jpg"
-    },
-    {
-        "title": "Super Mario Odyssey",
-        "description": "A platform game featuring Mario as he travels across various worlds to rescue Princess Peach.",
-        "rating": 9.5,
-        "image": "https://example.com/images/mario.jpg"
-    },
-    {
-        "title": "God of War",
-        "description": "An action-adventure game that follows Kratos and his son Atreus on a journey through Norse mythology.",
-        "rating": 9.8,
-        "image": "https://example.com/images/godofwar.jpg"
-    },
-    {
-        "title": "Minecraft",
-        "description": "A sandbox game that allows players to build and explore virtual worlds made of blocks.",
-        "rating": 9.3,
-        "image": "https://example.com/images/minecraft.jpg"
-    },
-    {
-        "title": "The Witcher 3: Wild Hunt",
-        "description": "An open-world RPG that follows Geralt of Rivia as he searches for his adopted daughter.",
-        "rating": 9.6,
-        "image": "https://example.com/images/witcher3.jpg"
-    }
+  {
+    "id": "1",
+    "titulo": "Aventura Espacial",
+    "descricao": "Explore o universo em busca de novos planetas.",
+    "categoria": "Aventura"
+  },
+  {
+    "id": "2",
+    "titulo": "Puzzle Colorido",
+    "descricao": "Resolva enigmas desafiantes.",
+    "categoria": "Puzzle"
+  }
 ]
